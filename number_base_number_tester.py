@@ -31,16 +31,16 @@ def play():
 	if numberbase.get() == "Binary":
 		if random.randint(0, 1) == 0:
 			lbl_question.configure(text = "Translate " + str(number) + " to binary.")
-			answer = bin(number)
+			answer = bin(number)[2:]
 		else: # This is if random.randint is 1
-			lbl_question.configure(text = "Translate " + str(bin(number)) + " to a normal integer.")
+			lbl_question.configure(text = "Translate " + str(bin(number))[2:] + " to a normal integer.")
 			answer = number
 	else: # This is if the user inputs Hexidecimal as the numberbase
 		if random.randint(0, 1) == 0:
 			lbl_question.configure(text = "Translate " + str(number) + " to hexidecimal")
-			answer = hex(number)
+			answer = hex(number)[2:]
 		else: # This is if random.randint is 1
-			lbl_question.configure(text = "Translate " + str(hex(number)) + " to a normal integer.")
+			lbl_question.configure(text = "Translate " + str(hex(number))[2:] + " to a normal integer.")
 			answer = number
 
 btn_play.configure(command = play)
